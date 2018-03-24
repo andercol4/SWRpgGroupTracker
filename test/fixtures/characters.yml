@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  campaign: one
+  race: MyString
+  class: MyString
+
+two:
+  name: MyString
+  campaign: two
+  race: MyString
+  class: MyString
