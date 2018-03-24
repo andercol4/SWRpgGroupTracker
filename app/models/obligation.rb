@@ -1,0 +1,3 @@
+class Obligation < Responsibility
+
+end

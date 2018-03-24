@@ -1,0 +1,3 @@
+class Duty < Responsibilty
+
+end

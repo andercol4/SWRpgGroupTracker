@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  score: 1
+  kind: MyString
+  description: MyText
+
+two:
+  type: 
+  score: 1
+  kind: MyString
+  description: MyText
