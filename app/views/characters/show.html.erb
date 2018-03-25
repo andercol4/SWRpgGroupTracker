@@ -13,4 +13,42 @@
 <p>
   <%= @character.career %>
 </p>
+<h1> Obligations </h1>
+<% @character.obligations.each do |obligation| %>
+  <p>
+    <%= obligation.score %>
+  </p>
+  <p>
+    <%= obligation.name %>
+  </p>
+  <p>
+    <%= obligation.description %>
+  </p>
+<% end %>
+<h1> Duties </h1>
+<% @character.duties.each do |duty| %>
+  <p>
+    <%= duty.score %>
+  </p>
+  <p>
+    <%= duty.name %>
+  </p>
+  <p>
+    <%= duty.description %>
+  </p>
+<% end %>
+
+<h1> Moralities</h1>
+<% @character.moralities.each do |morality| %>
+  <p>
+    <%= morality.score %>
+  </p>
+  <p>
+    <%= morality.name %>
+  </p>
+  <p>
+    <%= morality.description %>
+  </p>
+<% end %>
+
 

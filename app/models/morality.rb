@@ -1,1 +1,3 @@
 class Morality < Responsibility
+
+end

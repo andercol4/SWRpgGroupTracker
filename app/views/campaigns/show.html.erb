@@ -6,7 +6,7 @@
 </h3>
 <% @campaign.characters.each do |character| %>
   <p>
-    <%= character.name %>
+    <%= link_to character.name, campaign_character_path(@campaign, character) %>
   </p>
 <% end %>
 

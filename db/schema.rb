@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324233805) do
+ActiveRecord::Schema.define(version: 20180325151813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20180324233805) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "game_master_id"], name: "index_campaigns_on_name_and_game_master_id", unique: true
+  end
+
+  create_table "character_sessions", force: :cascade do |t|
+    t.bigint "character_id"
+    t.bigint "session_id"
+    t.integer "experience_earned"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["character_id"], name: "index_character_sessions_on_character_id"
+    t.index ["session_id"], name: "index_character_sessions_on_session_id"
   end
 
   create_table "characters", force: :cascade do |t|
@@ -46,6 +56,16 @@ ActiveRecord::Schema.define(version: 20180324233805) do
     t.index ["character_id"], name: "index_responsibilities_on_character_id"
   end
 
+  create_table "sessions", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.text "summary"
+    t.bigint "campaign_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["campaign_id"], name: "index_sessions_on_campaign_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -63,5 +83,7 @@ ActiveRecord::Schema.define(version: 20180324233805) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "character_sessions", "characters"
+  add_foreign_key "character_sessions", "sessions"
   add_foreign_key "characters", "campaigns"
 end
