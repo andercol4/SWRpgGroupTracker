@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20180324233805) do
     t.integer "game_master_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name", "game_master_id"], name: "index_campaigns_on_name_and_game_master_id", unique: true
   end
 
   create_table "characters", force: :cascade do |t|
