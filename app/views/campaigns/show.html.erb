@@ -1,2 +1,12 @@
-<h1>Campaigns#show</h1>
-<p>Find me in app/views/campaigns/show.html.erb</p>
+<h1><%= @campaign.name %></h1>
+<%= link_to 'Add Character', new_campaign_character_path(@campaign) %>
+
+<h3>
+  Characters
+</h3>
+<% @campaign.characters.each do |character| %>
+  <p>
+    <%= character.name %>
+  </p>
+<% end %>
+

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180324233805) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
+    t.string "player_name"
     t.bigint "campaign_id"
     t.string "race"
     t.string "class"
