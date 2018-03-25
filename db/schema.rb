@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180324233805) do
   create_table "responsibilities", force: :cascade do |t|
     t.string "type"
     t.integer "score"
-    t.string "kind"
+    t.string "name"
     t.text "description"
     t.bigint "character_id"
     t.datetime "created_at", null: false

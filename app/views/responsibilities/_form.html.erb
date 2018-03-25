@@ -1,0 +1,22 @@
+<%= form_for [@character, @responsibilty] do |f| %>
+  <div>
+    <%= f.label :type %>
+    <%= f.select :type, Responsibility::TYPES%>
+  </div>
+  <div>
+    <%= f.label :name%>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :score %>
+    <%= f.number_field :score %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+
+

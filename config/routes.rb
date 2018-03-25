@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :campaigns do
     resources :characters
   end
+  resources :characters, only: [] do
+    resources :responsibilities
+  end
 end

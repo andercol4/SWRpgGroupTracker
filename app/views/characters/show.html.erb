@@ -1,5 +1,6 @@
 <h1><%=@character.name%></h1>
 <%= link_to 'Back to campaign', campaign_path(@campaign) %>
+<%= link_to 'Add Duty/Obligation/Morality', new_character_responsibility_path(@character) %>
 <p>
   <%= @character.player_name %>
 </p>
