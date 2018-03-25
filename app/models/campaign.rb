@@ -4,4 +4,7 @@ class Campaign < ApplicationRecord
 
   has_many :characters
 
+  validates :name,
+    uniqueness: {scope: :game_master_id},
+    presence: true
 end

@@ -3,6 +3,6 @@
 <%= link_to 'New Campaign', new_campaign_path %>
 <% @campaigns.each do |campaign| %>
   <p>
-    <%= campaign.name %>
+    <%= link_to campaign.name, campaign_path(campaign) %>
   </p>
 <% end %>

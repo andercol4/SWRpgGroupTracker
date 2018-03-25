@@ -14,11 +14,12 @@ class CampaignsController < ApplicationController
   def create
     @campaign = Campaign.new
     @campaign.assign_attributes(campaign_params)
+    @campaign.game_master = current_user
     if @campaign.save
-      flash[:notice] = 'Campaign Successfully Created. Add Characters'
+      flash[:notice] = 'Campaign Successfully Created. Don\'t forget add characters'
       redirect_to campaign_path(@campaign)
     else
-      flash.now[:errors] = @campaign.errors.add
+      flash.now[:errors] = @campaign.errors.full_messages
       render :new
     end
   end
@@ -29,10 +30,10 @@ class CampaignsController < ApplicationController
   def update
     @campaign.assign_attributes(campaign_params)
     if @campaign.save
-      flash[:notice] = 'Campaign Successfully Created. Add Characters'
+      flash[:notice] = 'Campaign Successfully Updated.'
       redirect_to campaign_path(@campaign)
     else
-      flash.now[:errors] = @campaign.errors.add
+      flash.now[:errors] = @campaign.errors.full_messages
       render :edit
     end
   end
