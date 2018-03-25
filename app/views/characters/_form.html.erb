@@ -1,0 +1,25 @@
+<%= form_for [@campaign, @character] do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :player_name %>
+    <%= f.text_field :player_name %>
+  </div>
+  <div>
+    <%= f.label :race %>
+    <%= f.text_field :race %>
+  </div>
+  <div>
+    <%= f.label :career %>
+    <%= f.text_field :career %>
+  </div>
+  <div>
+    <%= f.label :total_experience %>
+    <%= f.text_field :total_experience %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+

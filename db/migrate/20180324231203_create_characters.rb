@@ -5,7 +5,7 @@ class CreateCharacters < ActiveRecord::Migration[5.1]
       t.string :player_name
       t.references :campaign, foreign_key: true
       t.string :race
-      t.string :class
+      t.string :career
       t.string :total_experience
       t.timestamps
     end

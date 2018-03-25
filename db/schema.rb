@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20180324233805) do
     t.string "player_name"
     t.bigint "campaign_id"
     t.string "race"
-    t.string "class"
+    t.string "career"
     t.string "total_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
