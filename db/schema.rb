@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180324233805) do
     t.bigint "campaign_id"
     t.string "race"
     t.string "career"
-    t.string "total_experience"
+    t.integer "total_experience"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["campaign_id"], name: "index_characters_on_campaign_id"

@@ -16,7 +16,7 @@ class CharactersController < ApplicationController
       flash.notice = "Character is created."
       redirect_to campaign_character_path(@campaign, @character)
     else
-      flash.errors = @character.errors.full_messages
+      flash[:errors] = @character.errors.full_messages
       render :new
     end
   end
@@ -30,8 +30,8 @@ class CharactersController < ApplicationController
       flash.notice = "Character is created."
       redirect_to campaign_character_path(@campaign, @character)
     else
-      flash.errors = @character.errors.full_messages
-      render :new
+      flash[:errors] = @character.errors.full_messages
+      render :edit
     end
   end
 
