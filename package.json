@@ -1,5 +1,7 @@
 {
   "name": "swrpg_group_tracker",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }
