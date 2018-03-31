@@ -1,12 +1,31 @@
-<h1><%= @campaign.name %></h1>
-<%= link_to 'Add Character', new_campaign_character_path(@campaign) %>
+<div class='container'>
+  <h1><%= @campaign.name %></h1>
+  <div class='row'>
+    <div class='col-sm-4'>
+      <div class='card'>
+        <div class="card-header">
+          <h4 class='float-left'>
+            Characters
+          </h4>
+          <%= link_to 'Add Character', new_campaign_character_path(@campaign), class: 'float-right btn btn-outline-primary' %>
 
-<h3>
-  Characters
-</h3>
-<% @campaign.characters.each do |character| %>
-  <p>
-    <%= link_to character.name, campaign_character_path(@campaign, character) %>
-  </p>
-<% end %>
-
+        </div>
+        <ul class="list-group list-group-flush">
+          <% @campaign.characters.each do |character| %>
+            <li class="list-group-item">
+              <%= link_to character.name, campaign_character_path(@campaign, character) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class='col-sm'>
+      <h3>
+        Session
+        <% unless @campaign.current_session %>
+          <%= link_to 'Start Session', new_campaign_session_path(@campaign), class: 'float-right btn btn-outline-primary' %>
+        <% end %>
+      </h3>
+    </div>
+  </div>
+</div>
