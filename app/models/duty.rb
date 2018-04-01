@@ -1,3 +1,2 @@
 class Duty < Responsibility
-
 end
