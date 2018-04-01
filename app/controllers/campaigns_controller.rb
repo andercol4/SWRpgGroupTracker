@@ -5,6 +5,7 @@ class CampaignsController < ApplicationController
   end
 
   def show
+    @current_session = @campaign.current_session
   end
 
   def new
