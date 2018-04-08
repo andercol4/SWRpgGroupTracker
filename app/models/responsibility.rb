@@ -25,4 +25,15 @@ class Responsibility < ApplicationRecord
     "#{range_start(int)}-#{range_finish(int)}"
   end
 
+  def self.range_array
+    current_total = 0
+    score_array = order(score: :desc).map do |responsibility|
+      current_total = responsibility.range_finish(current_total)
+    end
+  end
+
+  def self.select_activated(int = 0)
+    activated_index = range_array.index.with_index { |num, i| int <= num && int >= range_array[i - 1] }
+    range_array[activated_index]
+  end
 end
