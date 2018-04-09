@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 20180325151813) do
     t.datetime "end_date"
     t.text "summary"
     t.bigint "campaign_id"
+    t.integer "activated_duty_id"
+    t.integer "activated_duty_score"
+    t.integer "activated_morality_id"
+    t.integer "activated_morality_score"
+    t.integer "activated_obligation_id"
+    t.integer "activated_obligation_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["campaign_id"], name: "index_sessions_on_campaign_id"
